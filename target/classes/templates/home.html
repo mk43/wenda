@@ -1,0 +1,49 @@
+<html>
+<body>
+<pre>
+    #*
+    hello ---
+    *#
+    $!{value1} ## helll
+    $!{value2}
+    !{value1}
+    colors: $!{colors}
+
+    #foreach($color in $colors)
+        This is Color $!{foreach.index}: $color $!{foreach.count}
+    #end
+
+    #foreach($key in $map.keySet())
+        Num : $key, Value : $map.get($key)
+    #end
+
+    #foreach($ky in $map.entrySet())
+        Num : $ky.key, Value : $ky.value
+    #end
+
+    User :  $!{user.name},
+            $!{user.description}
+            $!{user.getDescription()}
+
+    #set($title = "fitzeng")
+    Title : $!{title}
+
+    Parse : #parse("header.html")
+    Include : #include("header.html")
+
+    #macro (render_color, $index, $color)
+        Color Render Macro $index, $color
+    #end
+
+    #foreach($color in $colors)
+        #render_color($foreach.index, $color)
+    #end
+
+    #set($hello = "Hello")
+    #set($helloworld =  "$!{hello} World")
+    $!{hello}
+    ${helloworld}
+
+</pre>
+</body>
+</html>
