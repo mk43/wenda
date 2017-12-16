@@ -31,7 +31,7 @@ public class InitDatabaseTests {
         Random random = new Random();
         for (int i = 0; i < 11; i++) {
             User user = new User();
-            user.setHeadUrl(String.format("http://images.fitzeng.com/head/%dt.png", random.nextInt(1000)));
+            user.setHeadUrl(String.format("http://images.nowcoder.com/head/%dt.png", random.nextInt(1000)));
             user.setName(String.format("USER%d", i));
             user.setPassword("");
             user.setSalt("");
